@@ -9,7 +9,7 @@ set -e
 echo ''
 
 info () {
-  printf "  [ \033[00;34m..\033[0m ] $1"
+  printf "\r\033[2K  [ \033[00;34m..\033[0m ] $1\n"
 }
 
 user () {
@@ -49,8 +49,25 @@ setup_gitconfig () {
 }
 
 link_files () {
+  dest=$(dirname $2)
+  if [ ! -d $dest ]; then
+    mkdir -p $dest
+    info "Create non-existing directory: $dest"
+  fi
   ln -s $1 $2
   success "linked $1 to $2"
+}
+
+get_dest_dir () {
+  source=$1
+  name=$(basename "${source%.*}")
+  parent_dir="$(dirname $source)/.parent.dir"
+  if [ -f $parent_dir ]; then
+    dir=$(head -n 1 $parent_dir)
+    echo -n "$HOME/$dir/$name"
+  else
+    echo -n "$HOME/.$name"
+  fi
 }
 
 install_dotfiles () {
@@ -63,6 +80,7 @@ install_dotfiles () {
   for source in `find $DOTFILES_ROOT -maxdepth 2 -name \*.symlink`
   do
     dest="$HOME/.`basename \"${source%.*}\"`"
+    dest="$(get_dest_dir ${source})" 
 
     if [ -f $dest ] || [ -d $dest ]
     then
