@@ -1,6 +1,7 @@
 #!/bin/sh
 
 #to map keys under extra keybord keys such as media
+#configuration: ~/.xbindkeysrc
 xbindkeys
 
 #disable touchpad on typing (timeout == 1 sec)

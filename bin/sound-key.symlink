@@ -1,0 +1,21 @@
+#!/bin/bash
+
+MODE=$1
+STEP=$2
+
+function current-value {
+  echo `amixer get Master | grep Mono: | awk -F ' ' '{print $4}'`
+}
+
+case $MODE in
+  up) amixer -q set Master "${STEP}%+"
+    notify-send 'Increase volume' "Current value: $(current-value)"
+    ;;
+  down) amixer -q set Master "${STEP}%-"
+    notify-send 'Decrease volume' "Current value: $(current-value)"
+    ;;
+esac
+
+
+
+

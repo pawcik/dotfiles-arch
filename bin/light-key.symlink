@@ -1,0 +1,19 @@
+#!/bin/bash
+
+MODE=$1
+STEP=$2
+
+function current-value {
+  echo `light -p`
+}
+
+case $MODE in
+  up) light -aq $STEP
+    notify-send 'Increase brightness' "Current value: $(current-value)"
+    ;;
+  down) light -sq $STEP
+    notify-send 'Decrease brightness' "Current value: $(current-value)"
+    ;;
+esac
+
+

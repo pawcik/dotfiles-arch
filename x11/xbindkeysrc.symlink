@@ -1,0 +1,31 @@
+# map extra keys to commands
+# to get extra key code use: 'xbindkeys -k'
+
+#decrease volum using F6
+"sound-key down 5"
+     F6
+      
+#"(Scheme function)"
+#    m:0x0 + c:122
+
+#decrease volum using F7
+"sound-key up 5"
+    F7
+
+#"(Scheme function)"
+#    m:0x0 + c:123
+
+#mute sound using etxra key
+#    m:0x0 + c:121
+"amixer -q set Master toggle"
+     XF86AudioMute
+
+
+#Increase brightness by 10%
+"light-key up 10"
+     F10
+#     XF86MonBrightnessUp
+#Decrease brightness by 10%
+"light-key down 10"
+     F9
+#     XF86MonBrightnessDown
