@@ -1,6 +1,12 @@
-## dotfiles
+## arch-dotfiles
 
 Main dotfiles (based on [Zach Holman's dotfiles](https://github.com/holman/dotfiles)) shared across all os, that I was lucky to work with.
+
+## place for things like:
+
+* i3-wm
+* pacman
+* 
 
 ## install
 
