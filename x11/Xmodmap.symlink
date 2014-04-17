@@ -1,0 +1,18 @@
+!ensures you're not stuck in CAPS on mode
+clear Lock
+!remaps the keyboard so CAPS LOCK=ESC
+!keycode 0x42=Escape
+keycode 66=Escape
+
+!to get similar osX, funtional key as primary
+!remaps media volum down with f6
+keycode 122=F6 
+!remaps media volum up with f7
+keycode 123=F7 
+
+
+!brightness
+!bright decrease
+keycode 232=F9 
+!bridht increase
+keycode 233=F10 

@@ -1,0 +1,26 @@
+#!/bin/sh
+
+#to map keys under extra keybord keys such as media
+xbindkeys
+
+#disable touchpad on typing (timeout == 1 sec)
+syndaemon -t -k -i 1 -d
+
+xrdb -merge ~/.Xresources
+
+#replace caps lock with escape
+setxkbmap -option caps:escape
+
+#set polish layout
+setxkbmap -layout pl,us
+
+if [ -s ~/.Xmodmap ]; then
+    xmodmap ~/.Xmodmap
+fi
+
+
+#start pulseaudio
+/usr/bin/start-pulseaudio-x11
+
+#start i3 wm
+exec i3
