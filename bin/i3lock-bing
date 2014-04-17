@@ -1,0 +1,10 @@
+#!/bin/bash
+
+#download latest bing photo
+#TODO:customize add to path, so one
+~/dev/linux-bing-wallpaper/bing_wallpaper.sh
+
+#lock screnn
+i3lock -i ~/Pictures/Bing/current.png -t
+
+
