@@ -1,0 +1,4 @@
+#!/bin/bash
+
+#issue https://code.google.com/p/chromium/issues/detail?id=345595
+/usr/bin/google-chrome --disable-gpu
