@@ -21,7 +21,7 @@ fi
 
 
 #start pulseaudio
-/usr/bin/start-pulseaudio-x11
+/usr/bin/start-pulseaudio-x11 &
 
 #start i3 wm
 exec i3
